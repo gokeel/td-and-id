@@ -1,0 +1,86 @@
+<ion-content padding>
+	<ion-grid>
+		<ion-row>
+			<ion-col col-5>
+				<img src="{{_file_url}}" alt="tes foto" />
+				<button ion-button color="dark-2" outline round block (click)="edit_profile()">
+            		{{'Userinfo.edit_profile' | translate}}
+          		</button>
+			</ion-col>
+			<ion-col col-7>
+				<div class="detail-name">
+					<h4>{{_fullname}}</h4>
+					<p>ID {{_user_id}}</p>
+					<p>{{_school}}</p>
+					<p>HP: {{_mobile}}</p>
+					<p>Email: {{_email}}</p>
+				</div>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<ion-item-group>
+	    <ion-item-divider color="gray"></ion-item-divider>
+	    <ion-item>
+		    <ion-icon name="notifications" color="primary" item-start></ion-icon>
+		      	{{'Common.notification' | translate}}
+		    <ion-icon name="arrow-forward" color="primary" item-end (click)="goto_notification()"></ion-icon>
+		</ion-item>
+	    <ion-item>
+		    <ion-icon name="chatboxes" color="primary" item-start></ion-icon>
+		      	{{'Common.message' | translate}}
+		    <ion-icon name="arrow-forward" color="primary" item-end (click)="goto_mailbox()"></ion-icon>
+		</ion-item>
+		<ion-item-divider color="gray"></ion-item-divider>
+		<ion-item>
+		    <ion-icon name="add" color="primary" item-start></ion-icon>
+		      	{{'Course.manage_teach_area' | translate}}
+		    <ion-icon name="arrow-forward" color="primary" item-end (click)="goto_open_city()"></ion-icon>
+		</ion-item>
+		<ion-item>
+		    <ion-icon name="add" color="primary" item-start></ion-icon>
+		      	{{'Course.manage_course' | translate}}
+		    <ion-icon name="arrow-forward" color="primary" item-end (click)="goto_open_course()"></ion-icon>
+		</ion-item>
+		<ion-item>
+		    <ion-icon name="create" color="primary" item-start></ion-icon>
+		      	Online Test
+		    <ion-icon name="arrow-forward" color="primary" item-end (click)="goto_otest()"></ion-icon>
+		</ion-item>
+		<ion-item-divider color="gray"></ion-item-divider>
+		<ion-item>
+		    <ion-icon name="calculator" color="primary" item-start></ion-icon>
+		      	{{'Menu.bank_account' | translate}}
+		    <ion-icon name="arrow-forward" color="primary" item-end (click)="goto_bank_account()"></ion-icon>
+		</ion-item>
+		<ion-item>
+		    <ion-icon name="cash" color="primary" item-start></ion-icon>
+		      	{{'Menu.commission' | translate}}
+		    <ion-icon name="arrow-forward" color="primary" item-end (click)="goto_commission()"></ion-icon>
+		</ion-item>
+		<ion-item-divider color="gray"></ion-item-divider>
+	    <ion-item>
+		    <ion-icon name="information-circle" color="primary" item-start></ion-icon>
+		      	{{'Common.term_condition' | translate}}
+		    <ion-icon name="arrow-forward" color="primary" item-end (click)="alert_term()"></ion-icon>
+		</ion-item>
+		<ion-item>
+		    <ion-icon name="document" color="primary" item-start></ion-icon>
+		      	{{'Common.privacy_policy' | translate}}
+		    <ion-icon name="arrow-forward" color="primary" item-end (click)="alert_policy()"></ion-icon>
+		</ion-item>
+		<ion-item>
+		    <ion-icon name="document" color="primary" item-start></ion-icon>
+		      	{{'Menu.change_language' | translate}}
+		    <ion-icon name="arrow-forward" color="primary" item-end (click)="goto_change_language()"></ion-icon>
+		</ion-item>
+		<!-- <ion-item>
+		    <ion-icon name="star-outline" color="primary" item-start></ion-icon>
+		      	Berikan Rating
+		    <ion-icon name="arrow-forward" color="primary" item-end></ion-icon>
+		</ion-item> -->
+		<ion-item-divider color="gray"></ion-item-divider>
+	</ion-item-group>
+	<button ion-button color="light-2" clear block (click)="do_signout()">
+		Sign Out
+	</button>
+</ion-content>

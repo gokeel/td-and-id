@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Notification</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-list>
+		<ion-item *ngFor="let i of _items" (click)="detail(i)">
+			<ion-avatar item-start>
+		      	<img src="assets/img/{{i.image_string}}">
+		    </ion-avatar>
+		    <h2>{{i.sender_name}}</h2>
+		    <p class="time">{{i.timestamp}}</p>
+		    <p>{{i.content}}</p>
+		</ion-item>
+	</ion-list>
+
+	<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+		<ion-infinite-scroll-content></ion-infinite-scroll-content>
+	</ion-infinite-scroll>
+</ion-content>

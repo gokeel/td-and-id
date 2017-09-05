@@ -1,0 +1,20 @@
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>helpFaq</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content padding>
+	<ion-list>
+	    <ion-list-header>
+	      F A Q
+	    </ion-list-header>
+	    <ion-item padding *ngFor="let d of _faq" (click)="toggleDetails(d)"><ion-icon color="primary" item-end [name]="d.icon"></ion-icon>
+	      {{d.title}}
+	      <div *ngIf="d.showDetails">{{d.details}}</div>
+	    </ion-item>
+	</ion-list>
+</ion-content>

@@ -1,0 +1,65 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>SIGN IN</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="front-2 form-login">
+  <div class="front-login">
+    <ion-list>
+      <ion-item class="lang-option">
+        <ion-select [(ngModel)]="_default_lang" (ionChange)="change_lang($event)" style="margin-left: 55%">
+          <ion-option *ngFor="let lang_ of _langs" value="{{lang_.value}}">{{lang_.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-input class="qbook font-12" [(ngModel)]="_email" type="email" placeholder="Email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input class="qbook font-12" [(ngModel)]="_password" type="password" placeholder="Password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button class="qbold font-12" ion-button color="light-outline" outline round block (click)="do_login()">
+      LOGIN
+    </button>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <p class="qbook font-10">{{'Login.forgot_password' | translate}}? <a href="#">{{'Login.get_help_sign_in' | translate}}.</a></p>
+          <p class="or-option qbold font-12">{{'Login.or_capital' | translate}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <img src="assets/img/facebook.png" alt="logo facebook" class="social-logo">
+        </ion-col>
+        <ion-col col-7>
+          <!-- <button ion-button color="light-outline" clear (click)="doFbLogin()">
+            Login with Facebook
+          </button> -->
+          <span class="social-text" (click)="doFbLogin()">Login with Facebook</span>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <img src="assets/img/google.png" alt="logo google" class="social-logo">
+        </ion-col>
+        <ion-col col-7>
+          <span class="social-text" (click)="doGoogleLogin()">Login with Google+</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <!-- <div class="bottom-fixed">
+  <p>Don't have an account? <button ion-button color="light-outline" round block (click)="open_login()">Sign Up</button></p>
+</div> -->
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="bottom">
+    <ion-title>
+    	<p>{{'Login.do_not_have_account' | translate}}? <a href="#" (click)="open_home('tutor')">{{'Signup.signup' | translate}}</a></p>
+    </ion-title> 
+  </ion-toolbar>
+</ion-footer>

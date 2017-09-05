@@ -1,0 +1,20 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Test Preview</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<p><strong>Test ID:</strong> {{_test_id}}</p>
+	<p><strong>Test Name:</strong> {{_test_name}}</p>
+	<p><strong>Duration:</strong> {{_duration}} {{'Course.minutes' | translate}}</p>
+	<p><strong>Objectives:</strong></p>
+	<span [innerHTML]="_objectives"></span>
+	<p><strong>How to:</strong></p>
+	<span [innerHTML]="_hint"></span>
+
+	<button ion-button round block color="primary" (click)="start()">{{'Course.start_otest' | translate}} &nbsp;&nbsp;<ion-icon name="arrow-forward" color="primary"></ion-icon></button>
+</ion-content>

@@ -1,0 +1,14 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Test Result</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<h2 *ngIf='_result == "PASSED"'>{{'Otest.result_congrats' | translate}}</h2>
+	<h2 *ngIf='_result == "FAILED"'>{{'Otest.result_sorry' | translate}}</h2>
+	<button ion-button round outline block color="primary" (click)="back_root()">OK</button>
+</ion-content>

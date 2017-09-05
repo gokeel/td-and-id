@@ -1,0 +1,18 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title><img src="assets/img/tutordoors-white.png" alt="Logo Tutordoors White" height="30px"></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-tabs color="primary" selectedIndex="{{_selected_tab}}">
+	  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>
+	  <ion-tab [root]="tab2Root" tabTitle="Order" tabIcon="cart"></ion-tab>
+	  <ion-tab [root]="tab5Root" tabTitle="Course" tabIcon="book"></ion-tab>
+	  <ion-tab [root]="tab3Root" tabTitle="Account" tabIcon="person"></ion-tab>
+	  <ion-tab [root]="tab4Root" tabTitle="Help" tabIcon="help-circle"></ion-tab>
+	</ion-tabs>
+</ion-content>

@@ -1,0 +1,114 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title class="">{{ _order_id }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-grid>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-10">{{'Course.course' | translate}}</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-10 right"><b>{{_program}}</b> - {{_course_name}}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-10">Tutor</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-10 right">{{_tutor_name}}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-10">{{'Course.address_for_study' | translate}}</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-10 right">{{_address}}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-10">{{'Course.city' | translate}}</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-10 right">{{_city}}, {{_province}}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-10">{{'Course.days' | translate}}</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-10 right">{{_days}}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-10">{{'Course.start_date' | translate}}</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-10 right">{{_start_date}}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col class="title-profile">
+				<p class="qbold font-12">{{'Order.price_detail' | translate}}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-9">{{'Order.tutor_fee' | translate}} (/1.5 {{'Course.hour' | translate}})</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-9 right">IDR {{_salary}}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-9">{{'Order.frequency_study' | translate}} (x)</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-9 right">{{_class}}x</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-9">{{'Course.session' | translate}} (x)</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-9 right">{{_session}} {{'Course.hour' | translate}}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-9">{{'Order.module_study' | translate}} (+)</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-9 right">IDR {{_price_module_study}}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-9">{{'Order.module_tryout' | translate}} (+)</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-9 right">IDR {{_price_module_tryout}}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-9"><b>Total</b></p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-9 right">IDR {{_total_price}}</p>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

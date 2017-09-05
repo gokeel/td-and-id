@@ -1,16 +1,6 @@
 // Ionic Variables and Theming. For more info, please see:
-// http://ionicframework.com/docs/theming/
-
-// Font path is used to include ionicons,
-// roboto, and noto sans fonts
+// http://ionicframework.com/docs/v2/theming/
 $font-path: "../assets/fonts";
-
-
-// The app direction is used to include
-// rtl styles in your app. For more info, please see:
-// http://ionicframework.com/docs/theming/rtl-support/
-$app-direction: ltr;
-
 
 @import "ionic.globals";
 
@@ -20,7 +10,7 @@ $app-direction: ltr;
 // To customize the look and feel of this app, you can override
 // the Sass variables found in Ionic's source scss files.
 // To view all the possible Ionic variables, see:
-// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
 
 
@@ -33,13 +23,28 @@ $app-direction: ltr;
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
+$primary-color: #00A49B;
+$secondary-color: #FDEE21;
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  primary:    		$primary-color,
+  secondary:  		$secondary-color,
+  danger:     		#f53d3d,
+  light:      		#f4f4f4,
+  light-2:        #F87148,
+  dark:       		#222,
+  dark-2:         #9B9B9B,
+  dark-3:         #808080,
+  facebook:	  		#617BB3,
+  google: 	  		#E2452B,
+  light-outline:	#ffffff,
+  bottom:			    #40BAA5,
+  gray:           #9B9B9B,
+  gray-2:         #E6E6E6,
+  blue:           #387DF3,
+  red:            #F23C3C
 );
+$select-md-icon-color: #ffffff;
+$alert-min-width: 350px;
 
 
 // App iOS Variables
@@ -72,13 +77,183 @@ $colors: (
 
 @import "ionic.theme.default";
 
+.toolbar-title{
+	text-align: center; 
+}
+.toolbar-title p{
+	font-size: 10pt; 
+	font-family: "Quicksand Book";
+}
+.toolbar-title a{
+	color: #fff;
+	text-decoration: none;
+}
+.form-login-header{
+	background-color: #00A49B;
+}
+.front{
+    background: url(../assets/img/tutordoors-01.png) no-repeat top center fixed !important;
+    background-size: cover !important;
+}
+.front-2{
+    background: url(../assets/img/tutordoors-02.png) no-repeat top center fixed !important;
+    background-size: cover !important;
+}
+.greetings{
+	text-align: center;
+	letter-spacing: 2px;
+	font-family: "Quicksand Book";
+	margin-top: 20%; 
+}
+.greetings h3{
+	color: #fff;
+	font-size: 10pt;
+	font-family: "Quicksand Book";
+}
+.front-login{
+	text-align: center;
+	color: #fff;
+}
+.hint{
+	font-family: "Lato Regular";
+}
+.bottom-fixed{
+  position: absolute;
+  bottom: 0;
+  background-color: #40BAA5;
+  background-size: cover !important;
+  color: #fff;
+  width: 100%;
+  height: 50px; 
+  text-align:center;
+}
+.form-login .item-md.lang-option{
+	background-color: transparent;
+	font-size: 10pt;
+	font-family: "Quicksand Book";
+  float: right;
+}
+.form-login .item-md{
+	background-color: rgba(255, 255, 255, 0.2);
+}
+.form-login .item-block{
+	border-radius: 30px;
+}
+.form-login .item-md.item-block .item-inner{
+	border-bottom: none;
+}
+.form-login ion-item{
+	margin: 15px 0;
+}
+.form-login button{
+	border-radius: 30px;
+}
+.form-login ion-item, .form-login input::placeholder{
+	color: #fff;
+}
+.form-login a, .bottom-fixed a{
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+}
+.or-option{
+	overflow: hidden;
+    text-align: center;
+}
+.or-option:before, .or-option:after{
+	background-color: #fff;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+.or-option:before{
+	right: 0.5em;
+    margin-left: -50%;
+}
+.or-option:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+.front-login .social-logo{
+	height: 30px;
+	float: right
+}
+.front-login .social-text{
+	float: left;
+	padding-top: 5px;
+}
+.uppercase{
+	text-transform: uppercase; 
+}
+.front-options{
+	font-family: "Quicksand Bold";
+	font-size: 18pt;
+}
+.app-form-select .item-md{
+  // background: url('../assets/img/button_1.png') no-repeat;
+  // background-size: 100% 100%;
+  // background-color: rgba(255, 255, 255, 0.2);
+}
+.app-form-select .item-block{
+  // border-radius: 30px;
+}
+.app-form-select .item-md.item-block .item-inner .input-wrapper{
+  border-radius: 30px;
+  border-style: solid;
+  border-color: $primary-color;
+}
+.app-form-select ion-item{
+  margin: 15px 0;
+  // padding: 0 0 5px 16px; 
+}
+.app-form-select ion-label{
+  padding-left: 15px;
+}
+.app-form-select .select-md .select-icon .select-icon-inner{
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid;
+  color: #000;
+  left: 0;
+}
+.app-form-submit .item-md .item-button{
+  height: 35px;
+}
+.box-textarea{
+  border-style: solid;
+  border-color: #D3D3D3;
+}
+
+//.app-form-select.form-search-tutor button{
+//  border-radius: 30px;
+//  border-style: solid;
+//  border-color: $primary-color;
+//}
+
+.qbook{font-family: "Quicksand Book"}
+.qbold{font-family: "Quicksand Bold"}
+.font-8{font-size:8pt}
+.font-9{font-size:9pt} 
+.font-10{font-size:10pt}
+.font-11{font-size:11pt}
+.font-12{font-size:12pt}
+.font-14{font-size:14pt}
+.font-15{font-size:15pt}
+.font-18{font-size:18pt}
+.font-20{font-size:20pt}
+.font-white{color:#ffffff}
+.font-ijo{color:$primary-color}
+.font-dark-1{color: #9B9B9B}
 
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:
-// http://ionicframework.com/docs/ionicons/
+// http://ionicframework.com/docs/v2/ionicons/
 
-@import "ionic.ionicons";
+@import "ionicons";
 
 
 // Fonts
@@ -86,3 +261,55 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+@font-face {
+    font-family: "Lato Light";
+    src: local("Lato Light"), local("Lato-Light"), url("../assets/fonts/Lato-Light.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato Regular";
+    src: local("Lato Regular"), local("Lato-Regular"), url("../assets/fonts/Lato-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Quicksand Bold";
+    src: local("Quicksand Bold"), local("Quicksand-Bold"), url("../assets/fonts/Quicksand/Quicksand_Bold.otf") format("opentype");
+}
+@font-face {
+    font-family: "Quicksand Bold Oblique";
+    src: local("Quicksand Bold Oblique"), local("Quicksand-Bold-Oblique"), url("../assets/fonts/Quicksand/Quicksand_Bold_Oblique.otf") format("opentype");
+}
+@font-face {
+    font-family: "Quicksand Book";
+    src: local("Quicksand Book"), local("Quicksand-Book"), url("../assets/fonts/Quicksand/Quicksand_Book.otf") format("opentype");
+}
+@font-face {
+    font-family: "Quicksand Book Oblique";
+    src: local("Quicksand Book Oblique"), local("Quicksand-Book-Oblique"), url("../assets/fonts/Quicksand/Quicksand_Book_Oblique.otf") format("opentype");
+}@font-face {
+    font-family: "Quicksand Light";
+    src: local("Quicksand Light"), local("Quicksand-Light"), url("../assets/fonts/Quicksand/Quicksand_Light.otf") format("opentype");
+}
+@font-face {
+    font-family: "Quicksand Light Oblique";
+    src: local("Quicksand Light Oblique"), local("Quicksand-Light-Oblique"), url("../assets/fonts/Quicksand/Quicksand_Light_Oblique.otf") format("opentype");
+}
+@import "./fontawesome_scss/font-awesome"; @font-face { font-family: 'FontAwesome'; src: url('../assets/fonts/fontawesome-webfont.eot?v=#{$fa-version}');
+src: url('../assets/fonts/fontawesome-webfont.eot?#iefix&v=#{$fa-version}') format('embedded-opentype'),
+url('../assets/fonts/fontawesome-webfont.woff2?v=#{$fa-version}') format('woff2'),
+url('../assets/fonts/fontawesome-webfont.woff?v=#{$fa-version}') format('woff'),
+url('../assets/fonts/fontawesome-webfont.ttf?v=#{$fa-version}') format('truetype'),
+url('../assets/fonts/fontawesome-webfont.svg?v=#{$fa-version}#fontawesomeregular') format('svg'); font-weight: normal; font-style: normal; }
+
+
+// Icons
+.ion-md-tab-home{
+  content: url('../assets/img/icon-home.png');
+  width: 24px; 
+  height: 32px;
+  padding: 6px 4px 2px;
+}
+.tabs-md .tab-button[aria-selected=true] {
+  .ion-md-tab-home {
+  content: url("../assets/img/icon-home.png");
+  } 
+}

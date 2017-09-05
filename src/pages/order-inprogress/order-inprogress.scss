@@ -1,0 +1,12 @@
+page-order-inprogress {
+	ion-card-header{
+		border-bottom: 3px solid #E5E5E5;
+	}
+	.card-header-md + .card-content-md, .card-md .item + .card-content-md{
+		padding-top: 5px
+	}
+	.detail{
+		text-align: right;
+		color: color($colors, primary);
+	}
+}

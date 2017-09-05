@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{'Course.add_teach_area' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-list>
+		<ion-item>
+			<ion-label color="dark-2">{{'Signup.select_province' | translate}}</ion-label>
+		  	<ion-select [(ngModel)]="_sel_province" (ionChange)="generate_city($event)">
+	    	  	<ion-option *ngFor="let prov_ of _province" value="{{prov_.id}}" >{{prov_.name}}</ion-option>
+	    	</ion-select>
+		</ion-item>
+		<ion-item>
+		  	<ion-label color="dark-2">{{'Signup.select_city' | translate}}</ion-label>
+		  	<ion-select [(ngModel)]="_selected[_sel_province]" multiple="true">
+	      		<ion-option *ngFor="let city_ of _city" value="{{city_.id}}" >{{city_.name}}</ion-option>
+	    	</ion-select>
+		</ion-item>
+	</ion-list>
+	<button ion-button color="primary" round block class="uppercase qbold font-12 spacing" (click)="do_submit()">
+		Submit
+	</button>
+</ion-content>

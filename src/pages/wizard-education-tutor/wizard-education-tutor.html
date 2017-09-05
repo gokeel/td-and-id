@@ -1,0 +1,57 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{ 'Userinfo.education_data' | translate }}</ion-title>
+    <ion-buttons end>
+		<button ion-button color="light-outline" (click)="do_submit()">
+		Submit
+		</button>
+	</ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="front-2 form-login">
+	<div class="front-login">
+		<ion-list>
+		  	<ion-item class="lang-option">
+	        	<ion-select [(ngModel)]="_default_lang" (ionChange)="change_lang($event)" style="margin-left: 55%">
+	          		<ion-option *ngFor="let lang_ of _langs" value="{{lang_.value}}">{{lang_.name}}</ion-option>
+	        	</ion-select>
+	      	</ion-item>
+	      	<ion-item class="qbook font-11">
+				<ion-label color="light-outline" color="light-outline">{{ 'Userinfo.degree' | translate }}</ion-label>
+				<ion-select [(ngModel)]="_degree" cancelText="Cancel" okText="OK">
+					<ion-option value="D1">D1</ion-option>
+                    <ion-option value="D2">D2</ion-option>
+                    <ion-option value="D3">D3</ion-option>
+                    <ion-option value="D4">D4</ion-option>
+                    <ion-option value="S1" checked="true">S1</ion-option>
+                    <ion-option value="S2">S2</ion-option>
+                    <ion-option value="S3">S3</ion-option>
+				</ion-select>
+			</ion-item>
+		  	<ion-item>
+		    	<ion-label color="light-outline" floating>{{ 'Userinfo.education_institution' | translate }}</ion-label>
+		    	<ion-input type="text" [(ngModel)]="_university" class="qbook font-12" ></ion-input>
+		 	</ion-item>
+		 	<ion-item>
+		    	<ion-label color="light-outline" floating>{{ 'Userinfo.major' | translate }}</ion-label>
+		    	<ion-input type="text" [(ngModel)]="_major" class="qbook font-12" ></ion-input>
+		 	</ion-item>
+		 	<ion-item>
+		    	<ion-label color="light-outline" floating>GPA</ion-label>
+		    	<ion-input type="text" [(ngModel)]="_grade" class="qbook font-12" ></ion-input>
+		 	</ion-item>
+		 	<ion-item>
+		    	<ion-label color="light-outline" floating>{{ 'Userinfo.college_year_in' | translate }}</ion-label>
+		    	<ion-datetime displayFormat="YYYY" [(ngModel)]="_year_in" class="qbook font-12" [(ngModel)]="_year_in"></ion-datetime>
+		 	</ion-item>
+		 	<ion-item>
+		    	<ion-label color="light-outline" floating>{{ 'Userinfo.college_year_out' | translate }}</ion-label>
+		    	<ion-datetime displayFormat="YYYY" [(ngModel)]="_year_out" class="qbook font-12" [(ngModel)]="_year_out"></ion-datetime>
+		 	</ion-item>
+		</ion-list>
+	</div>
+</ion-content>

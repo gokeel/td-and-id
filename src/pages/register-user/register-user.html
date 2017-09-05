@@ -1,0 +1,69 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>User Registration</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<p class="hint"></p>
+	<div class="greetings">
+		<p>Hai {{name}}</p>
+		<p>Silahkan isi data sesuai panduan</p>
+	</div>
+	<!-- Default language -->
+	<ion-list radio-group>
+	  <ion-list-header color="primary">
+	    Atur Bahasa
+	  </ion-list-header>
+
+	  <ion-item>
+	    <ion-label>English</ion-label>
+	    <ion-radio color="secondary" checked="true" value="en"></ion-radio>
+	  </ion-item>
+
+	  <ion-item>
+	    <ion-label>Bahasa Indonesia</ion-label>
+	    <ion-radio color="secondary" value="id"></ion-radio>
+	  </ion-item>
+
+	</ion-list>
+		<!-- User Role -->
+	<ion-list radio-group>
+	  <ion-list-header color="primary">
+	    Role Pengguna
+	  </ion-list-header>
+
+	  <ion-item>
+	    <ion-label>Tutor</ion-label>
+	    <ion-radio color="secondary" checked="true" value="teacher"></ion-radio>
+	  </ion-item>
+
+	  <ion-item>
+	    <ion-label>Siswa</ion-label>
+	    <ion-radio color="secondary" value="student"></ion-radio>
+	  </ion-item>
+
+	</ion-list>
+	 <!-- Province -->
+	<ion-list>
+	  <ion-item>
+	    <ion-label>Pilih Propinsi</ion-label>
+	    <ion-select [(ngModel)]="sel_province" (ionChange)="generate_city($event)">
+	      <ion-option *ngFor="let prov of province" value="{{prov.id}}" >{{prov.name}}</ion-option>
+	    </ion-select>
+	  </ion-item>
+	</ion-list>
+	 <!-- City -->
+	<ion-list>
+	  <ion-item>
+	    <ion-label>Pilih Kota</ion-label>
+	    <ion-select [(ngModel)]="sel_city">
+	      <ion-option *ngFor="let cit of city" value="{{cit.id}}" >{{cit.name}}</ion-option>
+	    </ion-select>
+	  </ion-item>
+	</ion-list>
+	<!-- Submit button -->
+</ion-content>

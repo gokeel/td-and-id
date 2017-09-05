@@ -1,0 +1,24 @@
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>orderInprogress</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content padding>
+	<button ion-button block round outline color="secondary" (click)="refresh()">Refresh</button>
+	<ion-card *ngFor="let data_ of _response_data">
+		<ion-card-header>
+		    <strong>{{'Course.course' | translate}} {{data_.course}} - {{data_.program}}</strong>
+		</ion-card-header>
+		<ion-card-content>
+			<strong>ID {{data_.order_id}}</strong>
+	    	<p>{{'Common.student' | translate}} {{data_.student}}</p>
+	    	<p>{{'Order.starting_course' | translate}} {{data_.start_date}}</p>
+	    	<p>{{'Course.at' | translate}} {{data_.address}}</p>
+	    	<button ion-button block round color="secondary" (click)="detail(data_.order_id)">{{'Order.detail' | translate}}</button>
+	  	</ion-card-content>
+	</ion-card>
+</ion-content>

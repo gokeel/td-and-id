@@ -1,0 +1,33 @@
+<ion-content padding>
+	<div class="hint">
+		<h4>{{'Course.monitoring_hint' | translate}}!</h4>
+		<p>- {{'Course.monitoring_hint_1' | translate}}</p>
+		<div *ngIf=' _role=="teacher"'>
+			<p>- {{'Course.monitoring_hint_2' | translate}}</p>
+			<p>- {{'Course.monitoring_hint_3' | translate}}</p>
+		</div>
+	</div>
+	<ion-card *ngFor="let data_ of _response_data">
+		<ion-card-header>
+		    <strong>{{'Course.course' | translate}} {{data_.course}} - {{data_.program}}</strong>
+		</ion-card-header>
+		<ion-card-content>
+			<div *ngIf=' _role=="teacher"'>
+				<p>{{'Common.student' | translate}} {{data_.student}}</p>
+	    		<p><ion-icon name="call"></ion-icon> {{data_.student_phone}}</p>
+			</div>
+			<div *ngIf=' _role=="student"'>
+	    		<p>Tutor {{data_.tutor}}</p>
+	    		<p><ion-icon name="call"></ion-icon> {{data_.tutor_phone}}</p>
+			</div>
+	    	<p>{{'Course.city' | translate}} {{data_.city}}</p>
+	    	<p>{{'Course.days' | translate}} {{data_.days}}</p>
+	    	<p>{{'Course.frequency_study' | translate}} {{data_.class}}</p>
+	    	<p>{{'Course.session' | translate}} {{data_.session}}</p>
+	    	<button ion-button block round color="secondary" (click)="goto_presence(data_.enroll_id)">{{'Course.list_of_presence' | translate}}</button>
+	    	<div *ngIf=' _role=="teacher"'>
+	    		<button ion-button block round color="primary" (click)="complete(data_.enroll_id)">{{'Course.mark_complete' | translate}}</button>
+	    	</div>
+	  	</ion-card-content>
+	</ion-card>
+</ion-content>

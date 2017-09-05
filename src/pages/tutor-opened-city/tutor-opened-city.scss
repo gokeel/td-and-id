@@ -1,0 +1,23 @@
+page-tutor-opened-city {
+	.toolbar-title{
+		text-align: left; 
+		text-transform: uppercase;
+		font-size: 14pt;
+	}
+	.header{
+		text-align: center;
+		background-color: color($colors, secondary);
+	}
+	.on{
+		color: #00ff00;
+	}
+	.off{
+		color: #ff0000;
+	}
+	.centered{
+		text-align: center;
+	}
+	.spacing{
+		margin: 20px 0;
+	}
+}

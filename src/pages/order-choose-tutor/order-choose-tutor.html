@@ -1,0 +1,73 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{ 'Common.profile' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-grid>
+		<ion-row>
+			<ion-col col-4>
+				<img class="profile" src="http://www.tutordoors.com/assets/uploads/{{_thumb}}">
+			</ion-col>
+			<ion-col col-8>
+				<!-- <p class="qbook font-10">{{_tutor.status}}</p> -->
+				<div class="fee">IDR 150.000</div>
+				<h2 class="qbold font-12">{{_fullname}}</h2>
+		    	<p class="qbook font-10"><i>{{ _sex | translate }}, {{_age}} {{'Common.years' | translate}}</i></p>
+		    	<p class="part-2 qbook font-10">ID {{_tutor_id}}</p>
+		    	<!-- <p class="part-2 qbook font-10 about"><i>*{{_about_me}}*</i></p> -->
+		    	<!-- <p class="day qbook font-10">{{_tutor.days}}</p>
+		    	<p class="day qbook font-10">{{'Course.session' | translate}} {{_tutor.session}} {{'Course.hour' | translate}}</p> -->
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col class="title-profile">
+				<h3 class="qbold font-12">{{'Userinfo.education' | translate}}</h3>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<p class="edu-list" *ngFor="let edu of _education">{{ edu.degree }} {{ edu.institution }} - {{ edu.major }} ({{ edu.date_in }} - {{ edu.date_out }})</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col class="title-profile">
+				<h3 class="qbold font-12">{{'Userinfo.teach_experience' | translate}}</h3>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<p class="edu-list">{{ _teach_experience }}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col class="title-profile">
+				<h3 class="qbold font-12">{{'Userinfo.competence' | translate}}</h3>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<p class="edu-list" *ngFor="let skill of _competence">{{ skill.course }}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col class="title-profile">
+				<h3 class="qbold font-12">{{'Userinfo.certification' | translate}}</h3>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<p class="edu-list">{{ _certificate }}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<button ion-button color="primary" round block (click)="choose()">{{ 'Order.choose_tutor' | translate }}</button>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

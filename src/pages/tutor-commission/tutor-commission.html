@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{'Menu.commission' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding *ngFor="let c of _comms">
+	<ion-card>
+	  	<ion-card-header>
+	   		{{'Payroll.period' | translate}} {{c.salary_period}}
+	  	</ion-card-header>
+	  	<ion-card-content>
+	    	<p><strong>ID</strong> {{c.payroll_id}}</p>
+	    	<p><strong>{{'Order.tutor_fee' | translate}}/1.5 {{'Common.hours' | translate}}</strong> {{c.salary_per_hour}}</p>
+	    	<p><strong>{{'Payroll.total_teach_hour' | translate}}</strong> {{c.total_hours}}</p>
+	    	<p><strong>{{'Payroll.total_salary' | translate}}</strong> IDR {{c.total_salary}}</p>
+	  	</ion-card-content>
+	</ion-card>
+</ion-content>

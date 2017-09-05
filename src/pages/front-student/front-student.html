@@ -1,0 +1,69 @@
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>frontStudent</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+<ion-content padding>
+	<div class="app-form-select">
+		<ion-list no-lines>
+			<ion-item>
+				<ion-label color="primary">{{ 'Common.select_province' | translate}}</ion-label>
+				<!-- <ion-select [(ngModel)]="_sel_province" (ionChange)="generate_city($event)"> -->
+				<ion-select [(ngModel)]="_sel_province" (ionChange)="generate_city($event)">
+					<ion-option *ngFor="let prov_ of _provinces; let i = index" value="{{i}}" >{{prov_.prov_name}}</ion-option>
+				</ion-select>
+			</ion-item>
+			<ion-item>
+				<ion-label color="primary">{{ 'Common.select_city' | translate}}</ion-label>
+				<ion-select [(ngModel)]="_sel_city">
+					<ion-option *ngFor="let city_ of _cities" value="{{city_.city_id}}" >{{city_.city_name}}</ion-option>
+				</ion-select>
+			</ion-item>
+			<ion-item>
+				<ion-label color="primary">{{ 'Common.select_program' | translate}}</ion-label>
+				<ion-select [(ngModel)]="_sel_program" (ionChange)="generate_course($event)">
+					<ion-option *ngFor="let prog_ of _programs; let j = index" value="{{j}}-{{prog_.program_id}}" >{{prog_.program_name}}</ion-option>
+				</ion-select>
+			</ion-item>
+			<ion-item>
+				<ion-label color="primary">{{ 'Common.select_course' | translate}}</ion-label>
+				<ion-select [(ngModel)]="_sel_course">
+					<ion-option value="all">-- All</ion-option>
+					<ion-option *ngFor="let course_ of _courses" value="{{course_.course_id}}" >{{course_.course_name}}</ion-option>
+				</ion-select>
+			</ion-item>
+		</ion-list>
+	</div>
+	<div class="app-form-submit">
+		<ion-list no-lines>
+			<ion-item>
+				<button ion-button class="font-white" color="primary" round block (click)="do_submit()">
+            		{{'Course.search' | translate}}
+          		</button>
+          	</ion-item>
+		</ion-list>
+	</div>
+	<p class="or-hint">{{'Order.or_filter_by_category' | translate}}</p>
+	<div class="app-form-select">
+		<ion-list no-lines>
+			<ion-item>
+				<ion-label color="primary">{{ 'Common.select_program' | translate}}</ion-label>
+				<ion-select [(ngModel)]="_sel_program_count">
+					<ion-option *ngFor="let procont_ of _data_programs_count" value="{{procont_.program_id}}" >{{procont_.program}} ({{procont_.count}} Tutor)</ion-option>
+				</ion-select>
+			</ion-item>
+		</ion-list>
+	</div>
+	<div class="app-form-submit">
+		<ion-list no-lines>
+			<ion-item>
+				<button ion-button class="font-white" color="secondary" round block (click)="search_program()">
+            		{{'Course.search' | translate}}
+          		</button>
+          	</ion-item>
+		</ion-list>
+	</div>
+</ion-content>

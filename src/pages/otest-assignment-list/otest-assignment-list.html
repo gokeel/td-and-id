@@ -1,0 +1,23 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Assignment</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-card *ngFor="let i of _test">
+	  	<ion-card-header>
+	    	{{i.test_name}}
+	  	</ion-card-header>
+	  	<ion-card-content>
+	  		<p>Test ID: {{i.test_id}}</p>
+	    	<p>{{'Course.related_course' | translate}}: {{i.course_name}}</p>
+	    	<p>Test result: {{i.result}}</p>
+	    	<p>Last taken: {{i.taken_time}}</p>
+	    	<button ion-button round outline block color="primary" (click)="preview(i.assignment_id, i.test_id)">{{'Course.run_otest' | translate}} &nbsp;&nbsp;<ion-icon name="arrow-forward" color="primary"></ion-icon></button>
+	  	</ion-card-content>
+	</ion-card>
+</ion-content>

@@ -1,0 +1,19 @@
+<ion-content padding>
+	<ion-searchbar [(ngModel)]="_sel_user_id" (ionInput)="getItems($event)" placeholder="Type ID or Name"></ion-searchbar>
+	<ion-list>
+	  <ion-item *ngFor="let item of _users">
+	    <button ion-button (click)="set_id(item.user_id)" clear block>{{"ID "+item.user_id+" | "+ item.first_name+" "+item.last_name }}</button>
+	  </ion-item>
+	  <ion-item>
+	    <ion-label fixed>Subject</ion-label>
+	    <ion-input [(ngModel)]="_subject" type="text" value=""></ion-input>
+	  </ion-item>
+	  <ion-item>
+	    <ion-label fixed>Message</ion-label>
+	    <ion-textarea [(ngModel)]="_message" type="text" value="" rows="10"></ion-textarea>
+	  </ion-item>
+	</ion-list>
+	<button class="qbold font-12" ion-button color="primary" outline round block (click)="do_send()">
+      Send
+    </button>
+</ion-content>

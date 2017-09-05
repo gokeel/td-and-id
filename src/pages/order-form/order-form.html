@@ -1,0 +1,125 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Isi Data</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-grid>
+		<ion-row>
+			<ion-col class="title-profile">
+				<h3 class="qbold font-11">{{'Order.your_course_request' | translate}}</h3>
+			</ion-col>
+		</ion-row>
+		<!-- <ion-row>
+			<ion-col col-7>
+				<p class="qbook font-10">Kursus Matematika</p>
+			</ion-col>
+			<ion-col col-5>
+				<p class="qbook font-10">SMA/MA/SMK</p>
+			</ion-col>
+		</ion-row> -->
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-10">Tutor</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-10">{{_tutor_name}}</p>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<ion-list radio-group [(ngModel)]="_sel_city">
+		<ion-list-header color="gray-2" class="qbook font-10">
+    		{{'Order.choose_city' | translate}}
+  		</ion-list-header>
+		<ion-item *ngFor="let city of _cities">
+    		<ion-label class="qbook font-10">{{city.city_name}}</ion-label>
+    		<ion-radio value="{{city.city_id}}"></ion-radio>
+  		</ion-item>
+  		<!-- <ion-item-divider color="gray-2"></ion-item-divider> -->
+	</ion-list>
+	<ion-list radio-group [(ngModel)]="_sel_course">
+		<ion-list-header color="gray-2" class="qbook font-10">
+    		{{'Order.choose_course' | translate}}
+  		</ion-list-header>
+		<ion-item *ngFor="let course of _courses; let i = index">
+    		<ion-label class="qbook font-10"><b>{{course.program}}</b> - {{course.course_name}}</ion-label>
+    		<ion-radio value="{{course.open_course_id}}" (ionSelect)="changeCourse(i)"></ion-radio>
+  		</ion-item>
+  		<!-- <ion-item-divider color="gray-2"></ion-item-divider> -->
+	</ion-list>
+	<ion-grid>
+		<ion-row>
+			<ion-col class="title-profile">
+				<h4 class="qbold font-11">{{'Course.class_info' | translate}}</h4>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<ion-list>
+		<ion-item>
+		    <ion-label class="qbook font-10">{{'Order.choose_days' | translate}}</ion-label>
+		    <ion-select [(ngModel)]="_sel_days" multiple="true" class="qbook font-10">
+		      	<ion-option *ngFor="let day of _day_array" value="{{day.id}}">{{day.name}}</ion-option>
+		    </ion-select>
+		</ion-item>
+		<ion-item>
+		    <ion-label class="qbook font-10">{{'Order.choose_session_per_class' | translate}}</ion-label>
+		    <ion-select [(ngModel)]="_sel_session" (ionChange)="countTotalPrice()">
+		      	<ion-option *ngFor="let sess of _session_array" value="{{sess}}">{{sess}}</ion-option>
+		    </ion-select>
+		</ion-item>
+		<ion-item>
+		    <ion-label class="qbook font-10">{{'Order.choose_class_per_month' | translate}}</ion-label>
+		    <ion-select [(ngModel)]="_sel_class" (ionChange)="countTotalPrice()">
+		      	<ion-option value="4">4 x</ion-option>
+		      	<ion-option value="8">8 x</ion-option>
+		      	<ion-option value="12">12 x</ion-option>
+		      	<ion-option value="16">16 x</ion-option>
+		    </ion-select>
+		</ion-item>
+	</ion-list>
+	<ion-grid>
+		<ion-row>
+			<ion-col class="title-profile">
+				<h4 class="qbold font-11">{{'Course.module_study' | translate}}</h4>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<ion-list>
+		<ion-item>
+		    <ion-label class="qbook font-10">{{'Order.add_module_study' | translate}} (IDR {{_price_module_study}})</ion-label>
+		    <ion-checkbox color="primary" [(ngModel)]="_check_module" (ionChange)="countTotalPrice()"></ion-checkbox>
+		</ion-item>
+		<ion-item>
+		    <ion-label class="qbook font-10">{{'Order.add_module_tryout' | translate}} (IDR {{_price_module_tryout}})</ion-label>
+		    <ion-checkbox color="primary" [(ngModel)]="_check_tryout" (ionChange)="countTotalPrice()"></ion-checkbox>
+		</ion-item>
+		<ion-item-divider color="gray-2"></ion-item-divider>
+	  	<ion-item>
+		    <ion-label floating>{{'Course.address_for_study' | translate}}</ion-label>
+		    <ion-input type="text" [(ngModel)]="_address"></ion-input>
+	  	</ion-item>
+	  	<ion-item>
+		  	<ion-label>{{'Course.start_date' | translate}}</ion-label>
+		  	<ion-datetime pickerFormat="DD MMM YYYY" displayFormat="DD MMM YYYY" [(ngModel)]="_start_date" min="{{_today_str}}" max="2020"></ion-datetime>
+		</ion-item>
+	</ion-list>
+	<ion-grid>
+		<ion-row>
+			<ion-col col-5 class="title-profile">
+				<h4 class="qbold font-11">{{'Order.total_price' | translate}}</h4>
+			</ion-col>
+			<ion-col col-7 class="title-profile">
+				<h4 class="qbold font-11" style="text-align: right">IDR {{_total_price}}</h4>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<button ion-button color="primary" round block (click)="checkout()">{{'Order.continue' | translate}}</button>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

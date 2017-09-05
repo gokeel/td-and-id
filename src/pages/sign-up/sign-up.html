@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title class="uppercase">{{_title | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="front-2 form-login">
+	<div class="front-login">
+    <ion-list>
+      <ion-item class="lang-option">
+        <ion-select [(ngModel)]="_default_lang" (ionChange)="change_lang($event)" style="margin-left: 55%">
+          <ion-option *ngFor="let lang_ of _langs" value="{{lang_.value}}">{{lang_.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+		<ion-grid>
+      <ion-row>
+        <ion-col col-5>
+          <img src="assets/img/facebook.png" alt="logo facebook" class="social-logo">
+        </ion-col>
+        <ion-col col-7>
+          <span class="social-text" (click)="doFbLogin()">Login with Facebook</span>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-5>
+          <img src="assets/img/google.png" alt="logo google" class="social-logo">
+        </ion-col>
+        <ion-col col-7>
+          <span class="social-text" (click)="doGoogleLogin()">Login with Google+</span>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <p class="or-option qbold font-12">{{'Login.or_capital' | translate}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+      	<ion-col>
+      		<button ion-button class="qbold font-12" color="light-outline" class="uppercase" outline round block (click)="open_signup_form()">
+			      {{'Login.create_account' | translate}}
+			    </button>
+      	</ion-col>
+      </ion-row>
+    </ion-grid>
+	</div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="bottom">
+    <ion-title><p>{{'Login.already_have_account' | translate}}? <a href="#" (click)="open_login()">Sign in</a></p></ion-title> 
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,126 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{ 'Userinfo.edit_profile' | translate }}</ion-title>
+    <ion-buttons end>
+		<button ion-button color="light-outline" (click)="update_info()">
+		Save
+		</button>
+	</ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<span class="label-required">*) is required</span>
+	<ion-list>
+		<ion-item>
+	        <img src="{{pathForImage(lastImage)}}" style="width: 50%" [hidden]="lastImage === null">
+	        <!-- <h3 [hidden]="lastImage !== null">Please Select Image!</h3>
+	    </ion-item>
+	    <ion-item> -->
+	        <button ion-button icon-start (click)="presentActionSheet()" [hidden]="lastImage !== null">
+	        	<ion-icon name="camera"></ion-icon>{{'Userinfo.update_profile_photo' | translate}}<span class="label-required">*</span>
+	        </button>
+	    </ion-item>
+		<ion-item>
+	    	<ion-label color="dark-2" floating>{{ 'Common.first_name' | translate }}<span class="label-required">*</span></ion-label>
+	    	<ion-input type="text" [(ngModel)]="_first_name" class="qbook font-10" ></ion-input>
+	 	</ion-item>
+	 	<ion-item>
+	    	<ion-label color="dark-2" floating>{{ 'Common.last_name' | translate }}</ion-label>
+	    	<ion-input type="text" [(ngModel)]="_last_name" class="qbook font-10" ></ion-input>
+	 	</ion-item>
+	  	<ion-item class="qbook font-10">
+			<ion-label color="dark-2">{{ 'Userinfo.sex' | translate }}<span class="label-required">*</span></ion-label>
+			<ion-select [(ngModel)]="_sex" cancelText="Cancel" okText="OK">
+				<ion-option value="male">{{'Userinfo.sex_male' | translate}}</ion-option>
+				<ion-option value="female">{{'Userinfo.sex_female' | translate}}</ion-option>
+			</ion-select>
+		</ion-item>
+		<ion-item class="qbook font-10">
+			<ion-label color="dark-2">{{ 'Userinfo.religion' | translate }}<span class="label-required">*</span></ion-label>
+			<ion-select [(ngModel)]="_religion" cancelText="Cancel" okText="OK">
+				<ion-option value="Islam">{{'Userinfo.religion_moslem' | translate}}</ion-option>
+				<ion-option value="Christian">{{'Userinfo.religion_christian' | translate}}</ion-option>
+				<ion-option value="Chatholic">{{'Userinfo.religion_catholic' | translate}}</ion-option>
+				<ion-option value="Hindu">{{'Userinfo.religion_hindu' | translate}}</ion-option>
+				<ion-option value="Buddha">{{'Userinfo.religion_buddha' | translate}}</ion-option>
+			</ion-select>
+		</ion-item>
+	  	<ion-item>
+	    	<ion-label color="dark-2" floating>{{ 'Userinfo.birth_place' | translate }}<span class="label-required">*</span></ion-label>
+	    	<ion-input type="text" [(ngModel)]="_birth_place" class="qbook font-10" ></ion-input>
+	 	</ion-item>
+	 	<ion-item>
+	    	<ion-label color="dark-2" floating>{{ 'Userinfo.birth_date' | translate }}<span class="label-required">*</span></ion-label>
+	    	<ion-datetime displayFormat="DD/MMM/YYYY" [(ngModel)]="_birth_date" class="qbook font-10" [(ngModel)]="_birth_date"></ion-datetime>
+	 	</ion-item>
+	 	<ion-item>
+	    	<ion-label color="dark-2" floating>{{ 'Userinfo.address' | translate }}<span class="label-required">*</span></ion-label>
+	    	<ion-input type="text" [(ngModel)]="_address" class="qbook font-10" ></ion-input>
+	 	</ion-item>
+	 	<ion-item>
+	    	<ion-label color="dark-2" floating>{{ 'Userinfo.phone' | translate }}<span class="label-required">*</span></ion-label>
+	    	<ion-input type="text" [(ngModel)]="_phone" class="qbook font-10" ></ion-input>
+	 	</ion-item>
+	 	<ion-item>
+	    	<ion-label color="dark-2" floating>{{ 'Userinfo.about_me' | translate }}<span class="label-required">*</span></ion-label>
+	    	<ion-textarea type="text" [(ngModel)]="_about_me" class="qbook font-10" ></ion-textarea>
+	 	</ion-item>
+	 	<ion-item>
+	    	<ion-label color="dark-2" floating>{{ 'Userinfo.teach_experience' | translate }}</ion-label>
+	    	<ion-textarea type="text" [(ngModel)]="_teach_experience" class="qbook font-10" ></ion-textarea>
+	 	</ion-item>
+	 	<ion-item>
+	    	<ion-label color="dark-2" floating>{{ 'Userinfo.skills' | translate }}</ion-label>
+	    	<ion-input type="text" [(ngModel)]="_skill" class="qbook font-10" ></ion-input>
+	 	</ion-item>
+	 	<ion-item>
+	    	<ion-label color="dark-2" floating>{{ 'Userinfo.toefl_score' | translate }}</ion-label>
+	    	<ion-input type="text" [(ngModel)]="_toefl" class="qbook font-10" ></ion-input>
+	 	</ion-item>
+	 	<ion-item>
+	    	<ion-label color="dark-2" floating>{{ 'Userinfo.hobby' | translate }}</ion-label>
+	    	<ion-input type="text" [(ngModel)]="_hobby" class="qbook font-10" ></ion-input>
+	 	</ion-item>
+	 	<ion-row>
+			<ion-col class="title-profile">
+				<h3 class="qbold font-10">{{'Userinfo.education_latest' | translate}}</h3>
+			</ion-col>
+		</ion-row>
+		<ion-item class="qbook font-10">
+			<ion-label color="dark-2">{{ 'Userinfo.education_degree' | translate }}</ion-label>
+			<ion-select [(ngModel)]="_degree" cancelText="Cancel" okText="OK">
+				<ion-option value="D1">D1</ion-option>
+				<ion-option value="D2">D2</ion-option>
+				<ion-option value="D3">D3</ion-option>
+				<ion-option value="D4">D4</ion-option>
+				<ion-option value="S1">S1</ion-option>
+				<ion-option value="S2">S2</ion-option>
+				<ion-option value="S3">S3</ion-option>
+			</ion-select>
+		</ion-item>
+		<ion-item>
+	    	<ion-label color="dark-2" floating>{{ 'Userinfo.education_institution' | translate }}</ion-label>
+	    	<ion-input type="text" [(ngModel)]="_institution" class="qbook font-10" ></ion-input>
+	 	</ion-item>
+	 	<ion-item>
+	    	<ion-label color="dark-2" floating>{{ 'Userinfo.education_major' | translate }}</ion-label>
+	    	<ion-input type="text" [(ngModel)]="_major" class="qbook font-10" ></ion-input>
+	 	</ion-item>
+	 	<ion-item>
+	    	<ion-label color="dark-2" floating>GPA</ion-label>
+	    	<ion-input type="text" [(ngModel)]="_grade_score" class="qbook font-10" ></ion-input>
+	 	</ion-item>
+	 	<ion-item>
+	    	<ion-label color="dark-2" floating>{{ 'Userinfo.education_year_in' | translate }}</ion-label>
+	    	<ion-input type="text" [(ngModel)]="_year_in" class="qbook font-10" ></ion-input>
+	 	</ion-item>
+	 	<ion-item>
+	    	<ion-label color="dark-2" floating>{{ 'Userinfo.education_year_out' | translate }}</ion-label>
+	    	<ion-input type="text" [(ngModel)]="_year_out" class="qbook font-10" ></ion-input>
+	 	</ion-item>
+	</ion-list>
+</ion-content>

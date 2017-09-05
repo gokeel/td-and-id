@@ -1,0 +1,60 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{_title | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="front-2 form-login">
+  <span class="label">*) is required</span>
+	<div class="front-login">
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating class="qbook font-10"><span class="label">Email*</span></ion-label>
+        <ion-input type="email" [(ngModel)]="_email"></ion-input>
+      </ion-item>
+
+    	<ion-item>
+        <ion-label floating class="qbook font-10"><span class="label">{{'Common.first_name' | translate}}*</span></ion-label>
+        <ion-input type="text" [(ngModel)]="_first_name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating class="qbook font-10"><span class="label">{{'Common.last_name' | translate}}</span></ion-label>
+        <ion-input type="text" [(ngModel)]="_last_name"></ion-input>
+      </ion-item>
+
+      <!-- <ion-item>
+			  <ion-label color="light-outline">{{ _teach_area | translate}} - {{'Signup.select_province' | translate}}*</ion-label>
+			  <ion-select [(ngModel)]="_sel_province" (ionChange)="generate_city($event)">
+		      <ion-option *ngFor="let prov_ of _province" value="{{prov_.id}}" >{{prov_.name}}</ion-option>
+		    </ion-select>
+			</ion-item>
+
+			<ion-item>
+			  <ion-label color="light-outline">{{ _teach_area | translate}} - {{'Signup.select_city' | translate}}*</ion-label>
+			  <ion-select [(ngModel)]="_sel_city">
+		      <ion-option *ngFor="let city_ of _city" value="{{city_.id}}" >{{city_.name}}</ion-option>
+		    </ion-select>
+			</ion-item> -->
+
+      <ion-item>
+        <img src="{{pathForImage(lastImage)}}" style="width: 50%" [hidden]="lastImage === null">
+        <!-- <h3 [hidden]="lastImage !== null">Please Select Image!</h3>
+      </ion-item>
+      <ion-item> -->
+        <button ion-button icon-start (click)="presentActionSheet()" [hidden]="lastImage !== null">
+          <ion-icon name="camera"></ion-icon>{{'Signup.set_profile_photo' | translate}}
+        </button>
+      </ion-item>
+      
+    </ion-list>
+    <button ion-button color="light-outline" outline round block class="uppercase qbold font-14" (click)="do_signup()">
+      Sign Up
+    </button>
+    <p class="qbook font-10">{{'Signup.agreement_1' | translate}} <a href="#" (click)="alert_term()">{{'Common.term_condition' | translate}}</a> &amp; <a href="#" (click)="alert_policy()">{{'Common.privacy_policy' | translate}}</a></p>
+  </div>
+</ion-content>

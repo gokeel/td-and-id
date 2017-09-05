@@ -1,0 +1,52 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{_test_id}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<p class="qbook font-8">{{'Otest.slide_to' | translate}}</p>
+	<p class="qbook font-9">{{'Otest.time_remaining' | translate}}: {{_timeLeft}}</p>
+	<ion-slides pager>
+		<!-- <form (ngSubmit)="submit_answers()"> -->
+		  	<ion-slide *ngFor="let i_ of _questions; let idx_ = index">
+			    <h2>{{'Otest.question' | translate}} #{{idx_ + 1}}</h2>
+			    <span class="soal" [innerHTML]="i_.question"></span>
+			    <div *ngIf='i_.answer_type == "Multiple"'>
+			    	<ion-list radio-group [(ngModel)]="_answers[i_.id]">
+					  	<ion-item *ngFor="let j_ of i_.answer_data">
+					    	<ion-label><span [innerHTML]="j_.answer"></span></ion-label>
+					    	<ion-radio color="dark-2" value="{{j_.id}}"></ion-radio>
+					  	</ion-item>
+					</ion-list>
+			    	<!-- <ion-item *ngFor="let j_ of i_.answer_data">
+					  	<ion-label><span [innerHTML]="j_.answer"></span></ion-label>
+					  	<ion-checkbox color="dark-2" [(ngModel)]="_answers[i_.id][]"></ion-checkbox> -->
+					  	<!-- <ion-checkbox color="dark-2" [(ngModel)]="_answers[i_.id]" name="answer-data-{{i_.id}}[]"></ion-checkbox> -->
+					  	<!-- <ion-checkbox color="dark-2" [(ngModel)]="_answers[i_.id]"></ion-checkbox> -->
+					<!-- </ion-item> -->
+			    </div>
+			    <div *ngIf='i_.answer_type == "Bool"'>
+			    	<ion-list radio-group [(ngModel)]="_answers[i_.id]">
+					  	<ion-item>
+					    	<ion-label>{{'Otest.answer_yes' | translate}}</ion-label>
+					    	<ion-radio color="dark-2" value="true"></ion-radio>
+					  	</ion-item>
+					  	<ion-item>
+						    <ion-label>{{'Otest.answer_no' | translate}}</ion-label>
+						    <ion-radio color="dark-2" value="false"></ion-radio>
+					  	</ion-item>
+					</ion-list>
+			    </div>
+			    <!-- <p class="qbook font-8">{{'Otest.slide_to' | translate}}</p> -->
+		  	</ion-slide>
+		  	<ion-slide>
+		  		<h2>{{'Otest.done' | translate}}?</h2>
+		  		<button ion-button color="secondary" block round (click)="submit_answers()">Submit</button>
+		  	</ion-slide>
+		<!-- </form> -->
+	</ion-slides>
+</ion-content>

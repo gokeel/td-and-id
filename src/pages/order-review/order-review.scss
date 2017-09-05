@@ -1,0 +1,27 @@
+page-order-review {
+	.toolbar-title{
+		text-align: left; 
+		text-transform: uppercase;
+	}
+	.hint{
+		color: #F98B6A
+	}
+	.title-profile{
+		background-color: #E6E6E6;
+		width: 850px;
+		padding: 15px 5px 5px 15px;
+	}
+	.right{
+		text-align: right
+	}
+	ion-col{
+		padding: 1px;
+	}
+	.alert-md .alert-button{
+		border-radius: 30px;
+		text-transform: uppercase;
+		background-color: #00A49B;
+		color: #fff;
+		text-align: center;
+	}
+}

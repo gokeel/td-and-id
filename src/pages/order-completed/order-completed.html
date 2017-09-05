@@ -1,0 +1,26 @@
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>orderCompleted</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content padding>
+	<ion-card *ngFor="let data_ of _response_data">
+		<ion-card-header>
+		    <strong>{{'Course.course' | translate}} {{data_.course}} - {{data_.program}}</strong>
+		</ion-card-header>
+		<ion-card-content>
+	    	<p>Tutor {{data_.tutor}}</p>
+	    	<p>{{'Order.starting_course' | translate}} {{data_.start_date}}</p>
+	    	<p>{{'Course.at' | translate}} {{data_.address}}</p>
+	    	<p class="detail">Detail...</p>
+	    	<button ion-button block round color="secondary" (click)="detail(data_.order_id)">{{'Order.detail' | translate}}</button>
+	    	<div class="{{_class_invoice}}">
+	    		<button ion-button block round color="primary" (click)="invoice(data_.invoice_id)">{{'Order.invoice' | translate}}</button>
+	    	</div>
+	  	</ion-card-content>
+	</ion-card>
+</ion-content>

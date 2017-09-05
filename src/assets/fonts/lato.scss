@@ -1,0 +1,72 @@
+// Lato Font
+
+$lato-font-path: $font-path !default;
+
+@font-face {
+    font-family: "Lato Black";
+    src: local("Lato Black"), local("Lato-Black"), url("#{$lato-font-path}/Lato-Black.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato Black Italic";
+    src: local("Lato Black Italic"), local("Lato-Black-Italic"), url("#{$lato-font-path}/Lato-BlackItalic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato Bold";
+    src: local("Lato Bold"), local("Lato-Bold"), url("#{$lato-font-path}/Lato-Bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato Bold Italic";
+    src: local("Lato Bold Italic"), local("Lato-Bold-Italic"), url("#{$lato-font-path}/Lato-BoldItalic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato Hairline";
+    src: local("Lato Hairline"), local("Lato-Hairline"), url("#{$lato-font-path}/Lato-Hairline.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato Hairline Italic";
+    src: local("Lato Hairline Italic"), local("Lato-Hairline-Italic"), url("#{$lato-font-path}/Lato-HairlineItalic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato Heavy";
+    src: local("Lato Heavy"), local("Lato-Heavy"), url("#{$lato-font-path}/Lato-HeavyItalic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato Italic";
+    src: local("Lato Italic"), local("Lato-Italic"), url("#{$lato-font-path}/Lato-Italic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato Light";
+    src: local("Lato Light"), local("Lato-Light"), url("#{$lato-font-path}/Lato-Light.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato Light Italic";
+    src: local("Lato Light Italic"), local("Lato-Light-Italic"), url("#{$lato-font-path}/Lato-LightItalic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato Medium";
+    src: local("Lato Medium"), local("Lato-Medium"), url("#{$lato-font-path}/Lato-Medium.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato Medium Italic";
+    src: local("Lato Medium Italic"), local("Lato-Medium-Italic"), url("#{$lato-font-path}/Lato-MediumItalic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato Regular";
+    src: local("Lato Regular"), local("Lato-Regular"), url("#{$lato-font-path}/Lato-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato Semibold";
+    src: local("Lato Semibold"), local("Lato-Semibold"), url("#{$lato-font-path}/Lato-Semibold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato Semibold Italic";
+    src: local("Lato Semibold Italic"), local("Lato-Semibold-Italic"), url("#{$lato-font-path}/Lato-SemiboldItalic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato Thin";
+    src: local("Lato Thin"), local("Lato-Thin"), url("#{$lato-font-path}/Lato-Thin.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato Thin Italic";
+    src: local("Lato Thin Italic"), local("Lato-Thin-Italic"), url("#{$lato-font-path}/Lato-ThinItalic.ttf") format("truetype");
+}

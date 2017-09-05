@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{'Userinfo.area_for_teaching' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-refresher (ionRefresh)="doRefresh($event)">
+    	<ion-refresher-content></ion-refresher-content>
+  	</ion-refresher>
+	<ion-grid>
+		<ion-row class="header">
+			<ion-col col-6>
+				Area
+			</ion-col>
+			<ion-col col-3>
+				Status
+			</ion-col>
+			<ion-col col-3>
+				Delete
+			</ion-col>
+		</ion-row>
+		<ion-row *ngFor="let a of _area">
+			<ion-col col-6 class="qbook font-8">
+				<strong>{{a.province}}</strong> - {{a.city}}
+			</ion-col>
+			<ion-col col-3 class="qbook font-8 centered {{a.class_status}}">
+				<ion-icon name="{{a.icon_status}}"></ion-icon>
+			</ion-col>
+			<ion-col col-3 class="qbook font-8 centered {{a.class_delete}}">
+				<ion-icon name="{{a.icon_delete}}" (click)="delete_item(a.id, a.city)"></ion-icon> {{a.delete_message}}
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<button ion-button color="primary" round block class="uppercase qbold font-12 spacing" (click)="add()">
+		{{'Course.add_teach_area' | translate}}
+	</button>
+	<button ion-button color="secondary" round block class="uppercase qbold font-12 spacing" (click)="refresh()">
+		Refresh
+	</button>
+</ion-content>

@@ -1,0 +1,32 @@
+page-search-tutor {
+	.toolbar-title{
+		text-align: left; 
+	}
+	.toolbar-title h3{
+		font-size: 10pt;
+	}
+	.toolbar-title h4{
+		font-size: 10pt;
+	}
+	.card-md{
+		width: 100%;
+	}
+	img{
+		border-radius: 50%;
+	}
+	.fee{
+		position: relative;
+		float: right;
+		margin-right: -20px;
+		padding: 10px;
+		background-color: #F66539;
+		color: #fff;
+		border-radius: 3px;
+	}
+	.part-2{
+		margin-top: 10px;
+	}
+	.day{
+		color: #BCBCBC;
+	}
+}

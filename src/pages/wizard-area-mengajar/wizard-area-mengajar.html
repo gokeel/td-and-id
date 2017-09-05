@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{ 'Userinfo.area_for_teaching' | translate }}</ion-title>
+    <ion-buttons end>
+		<button ion-button color="light-outline" (click)="do_submit()">
+		Submit
+		</button>
+	</ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="front-2 form-login">
+	<div class="front-login">
+		<!-- <h2>{{ 'Userinfo.area_for_teaching' | translate }}</h2> -->
+		<!-- <button ion-button (click)="show()">Show</button> -->
+		<ion-list>
+			<ion-item *ngFor="let prov_ of _location_data" class="qbook font-11">
+				<ion-label color="light-outline">{{prov_.prov_name}}</ion-label>
+				<ion-select [(ngModel)]="_selected[prov_.prov_id]" multiple="true" cancelText="Cancel" okText="Done">
+					<!-- <template > -->
+						<ion-option *ngFor="let city_ of prov_.city" value="{{city_.city_id}}">{{city_.city_name}}</ion-option>
+					<!-- </template> -->
+				</ion-select>
+			</ion-item>
+		</ion-list>
+		
+	</div>
+</ion-content>

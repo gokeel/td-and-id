@@ -1,0 +1,18 @@
+page-invoice-payment {
+	.toolbar-title{
+		text-align: left; 
+		text-transform: uppercase;
+	}
+	.info-header{
+		text-align: center
+	}
+	.label-head{
+		color: #808080
+	}
+	.label-hint{
+		color: color($colors, primary);
+	}
+	.bank-list{
+		text-align: center
+	}
+}

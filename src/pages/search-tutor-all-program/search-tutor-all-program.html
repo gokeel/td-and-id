@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>
+    	<h3>{{ 'Order.all_program' | translate }}</h3>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-card *ngFor="let tutor_ of _tutors" (click)="tutor_detail(tutor_.tutor_id)">
+		<ion-card-content>
+	    	<ion-grid>
+	    		<ion-row>
+	    			<ion-col col-4>
+	    				<img src="http://www.tutordoors.com/assets/uploads/{{tutor_.file_name}}">
+	    			</ion-col>
+	    			<ion-col col-8>
+	    				<div class="fee">IDR {{tutor_.fee}}</div>
+	    				<h2 class="qbold font-12">{{tutor_.first_name}} {{tutor_.last_name}}</h2>
+				    	<p class="qbook font-10">{{tutor_.latest_edu}}</p>
+				    	<p class="part-2 qbook font-10">{{tutor_.courses}}</p>
+				    	<p class="day qbook font-10">{{tutor_.days}}</p>
+	    			</ion-col>
+	    		</ion-row>
+	    	</ion-grid>
+	  	</ion-card-content>
+	</ion-card>
+</ion-content>

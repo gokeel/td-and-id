@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{'Menu.bank_account' | translate}}</ion-title>
+    <ion-buttons end>
+		<button ion-button color="light-outline" (click)="do_save()">
+		Save
+		</button>
+	</ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<span class="label-required">*) is required</span>
+	<ion-list>
+
+	  	<ion-item>
+		    <ion-label floating class="qbook font-10">{{'Order.bank_name' | translate}}<span class="label-required">*</span></ion-label>
+		    <ion-input type="text" [(ngModel)]="_name"></ion-input>
+	  	</ion-item>
+
+	  	<ion-item>
+		    <ion-label floating class="qbook font-10">{{'Order.bank_account_number' | translate}}<span class="label-required">*</span></ion-label>
+		    <ion-input type="text" [(ngModel)]="_number"></ion-input>
+	  	</ion-item>
+		
+		<ion-item>
+		    <ion-label floating class="qbook font-10">{{'Order.bank_account_name' | translate}}<span class="label-required">*</span></ion-label>
+		    <ion-input type="text" [(ngModel)]="_account"></ion-input>
+	  	</ion-item>
+		
+		<ion-item>
+		    <ion-label floating class="qbook font-10">{{'Order.bank_branch' | translate}}</ion-label>
+		    <ion-input type="text" [(ngModel)]="_branch"></ion-input>
+	  	</ion-item>
+		
+		<ion-item>
+		    <ion-label floating class="qbook font-10">{{'Course.city' | translate}}</ion-label>
+		    <ion-input type="text" [(ngModel)]="_city"></ion-input>
+	  	</ion-item>
+		
+	</ion-list>
+	<!-- <button ion-button round outline block color="primary" (click)="do_save()">Save</button> -->
+</ion-content>

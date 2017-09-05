@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{'Course.add_course_program' | translate}}</ion-title>
+    <ion-buttons end>
+		<button ion-button color="light-outline" (click)="do_submit()">
+		Submit
+		</button>
+	</ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<h2>{{ 'Userinfo.wizard_course_program' | translate }}</h2>
+	<!-- <button ion-button (click)="show()">Show</button> -->
+	<ion-list>
+		<ion-item class="qbook font-11">
+			<ion-label color="dark-2">{{'Signup.select_available_days_for_course' | translate}}</ion-label>
+			<ion-select [(ngModel)]="_select_days" multiple="true" cancelText="Cancel" okText="Done">
+				<ion-option *ngFor="let day_ of _days" value="{{day_.id}}">{{day_.day | translate}}</ion-option>
+			</ion-select>
+		</ion-item>
+		<ion-item class="qbook font-11">
+			<ion-label color="dark-2">{{'Signup.select_available_sessions_for_course' | translate}}</ion-label>
+			<ion-select [(ngModel)]="_select_session" multiple="true" cancelText="Cancel" okText="Done">
+				<ion-option *ngFor="let sess_ of _sessions" value="{{sess_.id}}">{{sess_.sess}}</ion-option>
+			</ion-select>
+		</ion-item>
+	</ion-list>
+	<p>{{'Signup.select_course_program' | translate}}</p>
+	<ion-list>
+		<ion-item *ngFor="let prog of _program_data" class="qbook font-11">
+			<ion-label color="dark-2">{{prog.program_name}}</ion-label>
+			<ion-select [(ngModel)]="_selected[prog.program_id]" multiple="true" cancelText="Cancel" okText="Done">
+				<ion-option *ngFor="let course_ of prog.course" value="{{course_.course_id}}">{{course_.course_name}}</ion-option>
+			</ion-select>
+		</ion-item>
+	</ion-list>
+</ion-content>

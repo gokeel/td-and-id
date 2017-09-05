@@ -1,0 +1,95 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title class="">{{ _order_id }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-grid>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-10">Status</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-10 right"><b>{{_status}}</b></p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-10">{{'Course.course' | translate}}</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-10 right"><b>{{_program}}</b> - {{_course_name}}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-10">Student</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-10 right">{{_student_name}}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-10">{{'Course.address_for_study' | translate}}</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-10 right">{{_address}}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-10">{{'Course.city' | translate}}</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-10 right">{{_city}}, {{_province}}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-10">{{'Course.days' | translate}}</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-10 right">{{_days}}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-10">{{'Course.start_date' | translate}}</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-10 right">{{_start_date}}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-9">{{'Order.frequency_study' | translate}} (x)</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-9 right">{{_class}}x</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-9">{{'Course.session' | translate}} (x)</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-9 right">{{_session}} {{'Course.hour' | translate}}</p>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-5>
+				<p class="qbook font-9">{{'Order.modules' | translate}}</p>
+			</ion-col>
+			<ion-col col-7>
+				<p class="qbook font-9 right">{{_modules}}</p>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<button ion-button block round color="primary" (click)="confirm(_order_id, _course_id)">{{'Order.confirm' | translate}}</button>
+	<button ion-button block round color="secondary" (click)="reject(_order_id, _course_id)">{{'Order.reject' | translate}}</button>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{'Course.list_of_presence' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+	<p class="font-11">{{'Course.course' | translate}}: {{ _course }}</p>
+	<p class="font-11">Tutor: {{ _teacher }}</p>
+	<p class="font-11">{{'Common.student' | translate}}: {{ _student }}</p>
+	
+	<ion-item-divider color="gray"></ion-item-divider>
+	<p class="font-11">List</p>
+	<ion-card *ngFor="let i of _items">
+	  	<ion-card-header>
+	    	<h2>{{i.teach_date}}</h2>
+	  	</ion-card-header>
+	  	<ion-card-content>
+	  		<ion-list no-lines>
+				<ion-item>
+					{{'Course.time_of_study' | translate}}: 
+					<ion-note>{{i.start_time}} - {{i.end_time}}</ion-note>
+				</ion-item>
+				<ion-item>
+					{{'Course.presence_acknowledge_by_tutor' | translate}}
+					<ion-icon *ngIf='i.teacher_entry=="true"' name="checkmark-circle" item-end color="blue"></ion-icon>
+			    	<ion-icon *ngIf='i.teacher_entry=="false"' name="close" item-end color="red"></ion-icon>
+				</ion-item>
+	  		</ion-list>
+	    	<div *ngIf='i.student_entry=="false"'>
+	    		<button ion-button color="primary" outline round block (click)="do_confirm(i.monitoring_id)">Confirm</button>
+	    	</div>
+	  	</ion-card-content>
+	</ion-card>
+</ion-content>

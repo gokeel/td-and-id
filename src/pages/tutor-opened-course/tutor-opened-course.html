@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{'Userinfo.opened_course_program' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-refresher (ionRefresh)="doRefresh($event)">
+    	<ion-refresher-content></ion-refresher-content>
+  	</ion-refresher>
+	<ion-grid>
+		<ion-row class="header">
+			<ion-col col-3>
+				Course
+			</ion-col>
+			<ion-col col-3>
+				Info
+			</ion-col>
+			<ion-col col-3>
+				Status
+			</ion-col>
+			<ion-col col-3>
+				Delete
+			</ion-col>
+		</ion-row>
+		<ion-row *ngFor="let c of _course">
+			<ion-col col-3 class="qbook font-8">
+				<strong>{{c.program}}</strong> - {{c.course}}
+			</ion-col>
+			<ion-col col-3 class="qbook font-8">
+				<strong>{{'Course.days' | translate}}:</strong> {{c.days}} <br/>
+				<strong>{{'Course.session' | translate}}:</strong> {{c.session}} {{'Course.hour' | translate}}
+			</ion-col>
+			<ion-col col-3 class="qbook font-8 centered {{c.class_status}}">
+				<ion-icon name="{{c.icon_status}}"></ion-icon>
+			</ion-col>
+			<ion-col col-3 class="qbook font-8 centered {{c.class_delete}}">
+				<ion-icon name="{{c.icon_delete}}" (click)="delete_item(c.id, c.course)"></ion-icon> {{c.delete_message}}
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<button ion-button color="primary" round block class="uppercase qbold font-12 spacing" (click)="add()">
+		{{'Course.add_course_program' | translate}}
+	</button>
+	<button ion-button color="secondary" round block class="uppercase qbold font-12 spacing" (click)="refresh()">
+		Refresh
+	</button>
+</ion-content>

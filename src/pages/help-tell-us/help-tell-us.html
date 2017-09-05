@@ -1,0 +1,46 @@
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>helpTellUs</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+
+<ion-content padding>
+	<div class="front-options">
+		<ion-list>
+		  	<ion-item>
+			    <ion-label>{{'Common.select_category' | translate}}</ion-label>
+			    <ion-select [(ngModel)]="_tell_cat">
+		      		<ion-option value="service">{{'Common.service' | translate}}</ion-option>
+						<ion-option value="critic">{{'Common.critic' | translate}}</ion-option>
+						<ion-option value="feature_complaint">{{'Common.feature_complaint' | translate}}</ion-option>
+						<ion-option value="payment_or_transaction">{{'Common.payment_or_transaction' | translate}}</ion-option>
+						<ion-option value="other_question">{{'Common.other_question' | translate}}</ion-option>
+		    	</ion-select>
+		  	</ion-item>
+		</ion-list>
+	    <ion-grid>
+	    	<ion-row>
+	    		<ion-col>
+	    			<ion-textarea class="font-12 box-textarea" [(ngModel)]="_tell_content" placeholder="{{'Common.tell_us_placeholder' | translate}}" rows="5"></ion-textarea>
+	    		</ion-col>
+	    	</ion-row>
+	    	<ion-row>
+	        	<ion-col>
+	          		<button ion-button class="font-white uppercase" color="primary" round block (click)="do_submit()">
+	            		{{'Common.submit' | translate}}
+	          		</button>
+	        	</ion-col>
+	    	</ion-row>
+	    	<ion-row>
+	        	<ion-col>
+	          		<button ion-button color="primary" class="font-ijo uppercase" outline round block (click)="showAlert()">
+	            		{{'Common.contact_us' | translate}}
+	          		</button>
+	        	</ion-col>
+	    	</ion-row>
+	    </ion-grid>
+	</div>
+</ion-content>

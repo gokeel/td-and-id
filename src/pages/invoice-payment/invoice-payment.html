@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{ 'Order.payment' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<div class="info-header">
+		<p class="qbold font-12 label-head">Invoice ID: {{_inv_id}}</p>
+		<p class="qbold font-12 label-head">Total:</p>
+		<p class="qbook font-14"><strong>IDR {{_total}}</strong></p>
+		<p class="qbold font-12 label-head">{{'Order.due_date_payment' | translate}}:</p>
+		<p class="qbook font-12"><strong>{{_due}}</strong></p>
+		<p class="qbold font-12 label-hint">{{'Order.make_payment_as_listed' | translate}}</p>
+	</div>
+	<div class="bank-list">
+		<p class="qbold font-10">Bank BCA</p>
+		<p class="qbold font-10">{{'Order.bank_account_number' | translate}}: 2289-002-779</p>
+		<p class="qbold font-10">{{'Order.bank_account_name' | translate}}: PT. Sinergia Internasional Edutama</p>
+		<p class="qbold font-10">{{'Order.bank_branch' | translate}}: Mayestik-Jakarta Selatan</p>
+	</div>
+	<button ion-button block outline color="primary" (click)="confirm()">{{'Order.payment_confirmation' | translate}}</button>
+</ion-content>

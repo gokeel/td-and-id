@@ -1,0 +1,18 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{'Common.message' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-tabs color="primary">
+	  <ion-tab [root]="tab1Root" tabIcon="mail" tabTitle="Inbox"></ion-tab>
+	  <ion-tab [root]="tab2Root" tabIcon="create" tabTitle="Compose"></ion-tab>
+	  <!-- <ion-tab [root]="tab3Root" tabIcon="document" tabTitle="Draft"></ion-tab> -->
+	  <ion-tab [root]="tab4Root" tabIcon="paper-plane" tabTitle="Sent"></ion-tab>
+	  <!-- <ion-tab [root]="tab5Root" tabIcon="trash" tabTitle="Trash"></ion-tab> -->
+	</ion-tabs>
+</ion-content>
